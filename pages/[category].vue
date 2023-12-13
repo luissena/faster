@@ -1,16 +1,25 @@
 <script setup lang="ts">
+export interface IDrink {
+  strDrink: string
+  strDrinkThumb: string
+  idDrink: string
+}
 export interface IDrinksData {
-  drinks: {
-    strDrink: string
-    strDrinkThumb: string
-    idDrink: string
-  }[]
+  drinks: IDrink[]
 }
 const { params } = useRoute()
 
 const { data, pending } = await useFetch<IDrinksData>(
   `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${params.category}`
 )
+
+const selectedDrink = ref<IDrink | null>(null)
+const dialog = ref(false)
+
+const setDialog = (value: boolean, drink?: IDrink) => {
+  if (drink) selectedDrink.value = drink
+  dialog.value = value
+}
 </script>
 
 <template>
@@ -22,6 +31,7 @@ const { data, pending } = await useFetch<IDrinksData>(
   >
     <DrinksCard
       v-for="drink in data?.drinks"
+      @click="setDialog(true, drink)"
       :key="drink.idDrink"
       :id="drink.idDrink"
       :name="drink.strDrink"
@@ -37,4 +47,11 @@ const { data, pending } = await useFetch<IDrinksData>(
     Nenhuma bebida encontrada. Por favor, selecione uma categoria ou busque por
     um nome.
   </p>
+
+  <DialogDrinksDetail
+    v-if="dialog"
+    :open-dialog="dialog"
+    :drink="selectedDrink"
+    @close-dialog="setDialog(false)"
+  />
 </template>
