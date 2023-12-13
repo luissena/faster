@@ -5,5 +5,5 @@
 
 ## 2º Etapa
 
-- [ ] Abrir um modal em cada bebida
-- [ ] Modal apresenta a instrução da bebida
+- [x] Abrir um modal em cada bebida
+- [x] Modal apresenta a instrução da bebida
