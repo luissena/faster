@@ -1,5 +1,9 @@
 <template>
-  <div>
-    <h1 class="bg-black text-white text-3xl text-center">Hello World!</h1>
-  </div>
+  <header>
+    <img class="mx-auto py-5" src="/faster_logo.png" />
+  </header>
+
+  <main class="max-w-7xl mx-auto py-12">
+    <NuxtPage />
+  </main>
 </template>
