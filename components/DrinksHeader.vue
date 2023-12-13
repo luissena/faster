@@ -1,6 +1,6 @@
 <template>
   <header
-    class="flex flex-col gap-4 lg:flex-row justify-between lg:items-center"
+    class="flex flex-col gap-4 lg:flex-row justify-between lg:items-center mb-12"
   >
     <div class="flex gap-2 items-center">
       <Icon size="30px" name="bx:drink" />
