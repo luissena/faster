@@ -1,7 +1,7 @@
 ## 1º Etapa
 
-- [ ] Selecionar uma categoria
-- [ ] Visualizar as bebidas da categoria selecionada
+- [x] Selecionar uma categoria
+- [x] Visualizar as bebidas da categoria selecionada
 
 ## 2º Etapa
 
