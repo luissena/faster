@@ -1,3 +1,11 @@
+<script setup lang="ts">
+const emit = defineEmits(["update:search"])
+
+const transportBetweenPageAndInput = (value: string) => {
+  emit("update:search", value)
+}
+</script>
+
 <template>
   <header
     class="flex flex-col gap-4 lg:flex-row justify-between lg:items-center mb-12"
@@ -9,7 +17,7 @@
 
     <div class="flex gap-4">
       <DrinksCategoryFilter />
-      <DrinksSearchByName />
+      <DrinksSearchByName @update:search="transportBetweenPageAndInput" />
     </div>
   </header>
 </template>
