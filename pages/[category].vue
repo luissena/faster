@@ -33,9 +33,7 @@ const setDialog = (value: boolean, drink?: IDrink) => {
       v-for="drink in data?.drinks"
       @click="setDialog(true, drink)"
       :key="drink.idDrink"
-      :id="drink.idDrink"
-      :name="drink.strDrink"
-      :image="drink.strDrinkThumb"
+      :drink="drink"
     />
   </div>
 

@@ -1,18 +1,19 @@
 <script setup lang="ts">
+import type { IDrink } from "~/pages/[category].vue"
+
 interface IDrinksCardProps {
-  id: string
-  name: string
-  image: string
+  drink: IDrink
 }
 
-const props = defineProps<IDrinksCardProps>()
+const { drink } = defineProps<IDrinksCardProps>()
 </script>
 
 <template>
   <div
-    class="flex flex-col gap-2 border rounded-xl hover:shadow cursor-pointer"
+    class="relative flex flex-col gap-2 border rounded-xl hover:shadow cursor-pointer"
   >
-    <img class="rounded-t-lg" :src="props.image" alt="drink" />
-    <h1 class="mx-auto text-center p-2">{{ props.name }}</h1>
+    <img class="rounded-t-lg" :src="drink.strDrinkThumb" alt="drink" />
+    <FavoriteDrinkButton :drink="drink" />
+    <h1 class="mx-auto text-center p-2">{{ drink.strDrink }}</h1>
   </div>
 </template>
