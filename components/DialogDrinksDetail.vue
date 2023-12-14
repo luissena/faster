@@ -6,7 +6,7 @@ interface IDialogDrinksDetailProps {
   openDialog: boolean
 }
 
-const props = defineProps<IDialogDrinksDetailProps>()
+const { drink, openDialog } = defineProps<IDialogDrinksDetailProps>()
 defineEmits(["closeDialog"])
 
 interface IDrinksDetail {
@@ -16,7 +16,7 @@ interface IDrinksDetail {
 }
 
 const { data: drinkInstructions } = await useFetch<IDrinksDetail>(
-  `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${props.drink?.idDrink}`
+  `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drink?.idDrink}`
 )
 </script>
 
@@ -40,7 +40,7 @@ const { data: drinkInstructions } = await useFetch<IDrinksDetail>(
         <div class="flex flex-col justify-between w-full mr-10">
           <div>
             <h1 class="font-medium text-xl mb-2">
-              {{ props.drink?.strDrink }}
+              {{ drink?.strDrink }}
             </h1>
             <h2 class="font-medium text-gray-500">Instruções</h2>
             <p class="text-gray-500">
@@ -61,7 +61,7 @@ const { data: drinkInstructions } = await useFetch<IDrinksDetail>(
         </div>
         <img
           class="rounded-lg lg:w-1/2 object-contain"
-          :src="props.drink?.strDrinkThumb"
+          :src="drink?.strDrinkThumb"
         />
       </div>
     </div>
