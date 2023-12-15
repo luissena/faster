@@ -12,7 +12,7 @@ const { drink } = defineProps<IDrinksCardProps>()
   <div
     class="relative flex flex-col gap-2 border rounded-xl hover:shadow cursor-pointer"
   >
-    <img class="rounded-t-lg" :src="drink.strDrinkThumb" alt="drink" />
+    <NuxtImg class="rounded-t-lg" :src="drink.strDrinkThumb" alt="drink" />
     <FavoriteDrinkButton :drink="drink" />
     <h1 class="mx-auto text-center p-2">{{ drink.strDrink }}</h1>
   </div>
