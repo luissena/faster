@@ -15,7 +15,7 @@ const transportBetweenPageAndInput = (value: string) => {
       <h1 class="text-3xl font-bold text-gray-800">Bebidas</h1>
     </div>
 
-    <div class="flex gap-4">
+    <div class="flex flex-col lg:flex-row gap-4">
       <DrinksCategoryFilter />
       <DrinksSearchByName @update:search="transportBetweenPageAndInput" />
     </div>
