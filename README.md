@@ -28,7 +28,7 @@ Foi tranquilo de codar, nada muito diferente do que faço no meu dia a dia, cons
 ### Observações
 
 - Acho que talvez devem ter ficado com dúvida do por quê eu utilizei o NuxtImage, eu percebi que o core da minha UX/UI eram as imagens no card, então eu precisava que elas fossem otimizadas de alguma forma, e o que eu encontrei de pronto para não perder muito tempo foi esse modulo.
-- Nos requisitos do desafio fala em tratar os erros da API como 400 e 500, eu pensei em usar o toaster para isso, porém como está documentado os erros da API fornecida eu achei que seria mais agradável ao usuário, só aparecer que não tem os dados mesmo.
+- Nos requisitos do desafio fala em tratar os erros da API como 400 e 500, eu pensei em usar o toaster para isso, porém como não está documentado os erros da API fornecida eu achei que seria mais agradável ao usuário, só aparecer que não tem os dados mesmo.
 - Quando falam em "tratamento para rotas que não existem" eu interpretei como uma tela personalizada de "Not Found", porém eu entendo que caberia também talvez um redirect automático para outra página.
 - Eu acho que esse é o que passou mais dúvida aos candidatos, eu não entendi essa parte de "Criar nome para aplicação", se é so um nome de repositório mesmo ou um nome criativo kkk, então lá vai o meu nome "Faster Drinks - Um drink faster para o seu "dia faster", acho que merecia passar na vaga só por esse nome, pode falar 😅
 
