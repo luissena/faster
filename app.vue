@@ -1,3 +1,14 @@
+<script setup lang="ts">
+useHead({
+  title: "Faster Drinks",
+  meta: [
+    {
+      name: "description",
+      content: "Faster Drinks é um site que lista alguns drinks famosos.",
+    },
+  ],
+})
+</script>
 <template>
   <header>
     <img class="mx-auto py-5" src="/faster_logo.png" />
