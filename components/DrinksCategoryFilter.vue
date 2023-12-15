@@ -1,27 +1,7 @@
 <script setup lang="ts">
-import { ref } from "vue"
+import { useDrinksCategories } from "~/composables/useDrinksCategories"
 
-interface ICategoryData {
-  drinks: {
-    strCategory: string
-  }[]
-}
-
-const { push } = useRouter()
-const { params } = useRoute()
-const paramsCategory = params.category?.toString()
-
-const { data } = await useFetch<ICategoryData>(
-  "https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list"
-)
-
-const categorySelected = ref(paramsCategory ? paramsCategory : "")
-
-watch(categorySelected, () => {
-  if (categorySelected.value) {
-    push(`/${encodeURIComponent(categorySelected.value)}`)
-  }
-})
+const { categories, categorySelected } = await useDrinksCategories()
 </script>
 
 <template>
@@ -30,6 +10,6 @@ watch(categorySelected, () => {
     v-model="categorySelected"
   >
     <option disabled value="">Categorias</option>
-    <option v-for="category in data?.drinks">{{ category.strCategory }}</option>
+    <option v-for="category in categories">{{ category.strCategory }}</option>
   </select>
 </template>
